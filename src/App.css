@@ -3,7 +3,7 @@
 }
 
 .App-logo {
-  height: 40px
+  height: 40px;
 }
 
 /* @media (prefers-reduced-motion: no-preference) {
@@ -15,12 +15,59 @@
 .App-header {
   display: flex;
   align-items: center;
-  justify-content: left;
+  justify-content: center;
 }
 
 .App-logo{
   min-height: 15rem;
+  margin: 1rem;
+}
+
+.MuiInputBase-inputTypeSearch{
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 5px 0 5px 5px;
   margin: 2rem;
+}
+.container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.root {
+  display: 'flex';
+  margin: 2rem;
+  width: fit-content;
+}
+
+.details {
+  display: 'flex';
+  flex-direction: 'column';  
+}
+
+.content {
+  flex: '1 0 auto';
+}
+
+.cover {
+  width: 151;
+}
+
+.controls {
+  display: 'flex';
+  align-items: 'center';
+  padding: 2rem;
+}
+
+.playIcon {
+  height: 38;
+  width: 38;
+}
+
+.favIcon {
+  height: 38;
+  width: 38;
 }
 
 /* @keyframes App-logo-spin {
