@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import api from "./server/api";
+import api from "./../../server/api";
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import IconButton from '@material-ui/core/IconButton';
@@ -10,11 +10,13 @@ import StarIcon from '@material-ui/icons/Star';
 
 export default function MediaControlCard() {
   const [music, setMusic] = useState();
+
   const search = InputEvent
 
   useEffect(() => {
     api
-      .get(`/search?q=${search}`)
+      //.get(`/search?q=${search}`)
+      .get("/radio/37151/tracks")
       .then((response) => setMusic(response.data))
       .catch((err) => {
         console.error("ops! ocorreu um erro" + err);

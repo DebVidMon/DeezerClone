@@ -1,45 +1,108 @@
 import logo from "./logo.svg";
 import "./App.css";
-import api from "./server/api";
-import React, { useEffect, useState } from "react";
-import Card from "@material-ui/core/Card";
-import CardContent from "@material-ui/core/CardContent";
-import IconButton from "@material-ui/core/IconButton";
-import PlayArrowIcon from "@material-ui/icons/PlayArrow";
-import StarIcon from "@material-ui/icons/Star";
-import SearchIcon from '@material-ui/icons/Search';
-import InputBase from '@material-ui/core/InputBase';
-//import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-//import MostPlayed from "./components/MostPlayed/MostPlayed";
-//import Favorites from "./components/Favorites/Favorites";
+import {
+  Toolbar,
+  Typography,
+  Button,
+  AppBar,
+  IconButton,
+} from "@material-ui/core";
+import { SetStateAction } from "react";
+import MenuIcon from "@material-ui/icons/Menu";
+import SearchIcon from "@material-ui/icons/Search";
+import InputBase from "@material-ui/core/InputBase";
+import MostPlayed from "./components/MostPlayed/MostPlayed";
+import Search from "./components/Search/Search";
+import { BrowserRouter, BrowserRouter as Route } from "react-router-dom";
+
+import Favorites from "./components/Favorites/Favorites";
 
 export default function App() {
-  const [music, setMusic] = useState();
+  // function handleChange(event) {
+  //   SetStateAction({ value: event.target.value });
+  //   let searched = event.target.value
+  // }
 
-  useEffect(() => {
-    api
-      .get("/radio/37151/tracks")
-      .then((response) => setMusic(response.data))
-      .catch((err) => {
-        console.error("ops! ocorreu um erro" + err);
-      });
-  }, []);
+  // function handleSubmit(event) {
+
+  //         <Route path="/search/:string">
+  //           <Search />
+  //         </Route>
+  // }
+
+  // function gofavorites() {
+  //   return (
+  //     <ReactDOM>
+  //       <Route path="/favorites">
+  //         <Favorites />
+  //       </Route>
+  //     </ReactDOM>
+  //   );
+  // }
 
   return (
     <div className="App">
-      
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+        <AppBar position="static">
+          <Toolbar>
+            <IconButton
+              edge="start"
+              className="menuButton"
+              color="inherit"
+              aria-label="open drawer"
+            >
+              <MenuIcon />
+            </IconButton>
+            <Typography className="tipo" noWrap color="textSecondary">
+              MAIS POPULARES
+            </Typography>
+            <Typography>
+              <Button className="tipo" color="inherit">
+                Suas Favoritas
+              </Button>
+            </Typography>
+            <div className="search">
+              <InputBase
+                placeholder="Pesquisar…"
+                className="inputTypeSearch"
+                aria-label="search"
+              />
+              <IconButton type="submit" className="searchIcon" color="inherit">
+                <SearchIcon />
+              </IconButton>
+            </div>
+          </Toolbar>
+        </AppBar>
+        {/* <Toolbar>
+          <Button>Mais ouvidas</Button> 
+          <Button color="inherit" >
+          {/* onClick={gofavorites}  
+            Favoritas
+          </Button>
+        </Toolbar> 
         <InputBase
           type="search"
           className="MuiInputBase-inputTypeSearch"
           placeholder="Pesquisar"
-          />
-        <IconButton type="submit" className="busca" aria-label="search">
-        <SearchIcon />
-      </IconButton>
+          // onChange={handleChange}
+        /> 
+        <IconButton
+          type="submit"
+          className="busca"
+          value="busca"
+          aria-label="search"
+          // onClick={handleSubmit}
+        >
+          <SearchIcon />
+        </IconButton>
+        {/* <ReactDOM>
+          <MostPlayed />
+        </ReactDOM> */}
       </header>
-      
+      <img src={logo} className="App-logo" alt="logo" />
+      <BrowserRouter>
+        <MostPlayed />
+      </BrowserRouter>
     </div>
   );
 }

@@ -1,0 +1,41 @@
+
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .root {
+    display: 'flex';
+    margin: 2rem;
+    width: fit-content;
+  }
+  
+  .details {
+    display: 'flex';
+    flex-direction: 'column';  
+  }
+  
+  .content {
+    flex: '1 0 auto';
+  }
+  
+  .cover {
+    width: 151;
+  }
+  
+  .controls {
+    display: 'flex';
+    align-items: 'center';
+    padding: 2rem;
+  }
+  
+  .playIcon {
+    height: 38;
+    width: 38;
+  }
+  
+  .favIcon {
+    height: 38;
+    width: 38;
+  }

@@ -23,31 +23,25 @@
   margin: 1rem;
 }
 
-.MuiInputBase-inputTypeSearch{
-  width: 100%;
-  padding: 0.5rem;
-  border: 1px solid #ccc;
-  border-radius: 5px 0 5px 5px;
-  margin: 2rem;
-}
+
 .container{
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .root {
-  display: 'flex';
+  display: flex;
   margin: 2rem;
   width: fit-content;
 }
 
 .details {
-  display: 'flex';
-  flex-direction: 'column';  
+  display: flex;
+  flex-direction: column;  
 }
 
 .content {
-  flex: '1 0 auto';
+  flex: 1 0 auto;
 }
 
 .cover {
@@ -68,6 +62,39 @@
 .favIcon {
   height: 38;
   width: 38;
+}
+
+.menuButton{
+  margin-right: 0.25rem;
+}
+
+
+.search {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  border-radius: 10px;
+  margin: 0.25rem;
+  width: 60%;
+  }
+
+  .inputTypeSearch{
+    width: 90%;
+    padding: 0.25rem;
+    border: 1px solid #ccc;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 5px;
+    margin: 0.5rem;
+  }
+  
+  .inputTypeSearch:hover{
+    background-color: rgba(255, 255, 255, 0.8);
+  }
+
+.searchIcon {
+  pointer-events: none;
+  display: flex;
 }
 
 /* @keyframes App-logo-spin {

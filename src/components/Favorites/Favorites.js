@@ -1,4 +1,4 @@
-import api from "./server/api";
+import api from "./../../server/api";
 import React, { useEffect, useState } from "react";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
@@ -20,7 +20,7 @@ function Favorites() {
 
   return (
     <div className="pop">
-      <h1>Mais Populares</h1>
+      <h1>Suas Favoritas</h1>
       <div className="container">
         <Card className="root">
           <div className="details">
