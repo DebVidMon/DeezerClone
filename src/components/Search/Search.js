@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import api from "./../../server/api";
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
@@ -26,6 +26,7 @@ export default function MediaControlCard() {
   return (
     <div className="search">
     <h1>Busca por {search}</h1>
+    <Fragment>
     <Card className="root">
         <div className="details">
           <CardContent className="content">
@@ -46,6 +47,7 @@ export default function MediaControlCard() {
           </div>
         </div>
       </Card>
+      </Fragment>
     </div>
   );
 }

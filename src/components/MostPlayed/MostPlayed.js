@@ -13,7 +13,14 @@ export default function MostPlayed() {
   useEffect(() => {
     api
       .get("/radio/37151/tracks")
-      .then((response) => setMusic(response.data))
+      .then(response => {
+        if (response) {
+            setMusic(response.data)
+        } else {
+            console.log('Não há resposta')
+        }
+
+    })
       .catch((err) => {
         console.error("ops! ocorreu um erro" + err);
       });
@@ -28,10 +35,10 @@ export default function MostPlayed() {
         <div className="details">
           <CardContent className="content">
           <img classeName="cover" alt="capa">
-          {music?.album.cover}
+          {music?.picture}
             </img>
             <p>Título: {music?.title}</p>
-            <p>Artista: {music?.artist.name}</p>
+            <p>Artista: {music?.artist}</p>
             <p><small>Duração: {music?.duration}</small></p>
           </CardContent>
           <div className="controls">
