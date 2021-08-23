@@ -1,6 +1,6 @@
 
 import api from "./../../server/api";
-import React, { useEffect, useState, SetStateAction } from "react";
+import React, { Fragment,useEffect, useState} from "react";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 import IconButton from "@material-ui/core/IconButton";
@@ -8,7 +8,7 @@ import PlayArrowIcon from "@material-ui/icons/PlayArrow";
 import StarIcon from "@material-ui/icons/Star";
 
 export default function MostPlayed() {
-  const [music, setMusic] = useState();
+  const [music, setMusic] = useState(false);
 
   useEffect(() => {
     api
@@ -23,7 +23,7 @@ export default function MostPlayed() {
       <div className="pop">
         <h1>Mais Populares</h1>
       <div className="container">
-      {/* {this.state.music.map(item => ( */}
+      <Fragment>
       <Card className="root">
         <div className="details">
           <CardContent className="content">
@@ -44,7 +44,7 @@ export default function MostPlayed() {
           </div>
         </div>
       </Card>
-      {/* ))} */}
+      </Fragment>
       </div>
       </div>
     );
